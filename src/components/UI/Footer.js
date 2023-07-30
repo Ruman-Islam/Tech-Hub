@@ -1,67 +1,67 @@
 const Footer = () => {
   return (
-    <footer className="text-gray-600 body-font">
+    <footer className="body-font bg-color_bg text-white">
       <div className="container px-5 py-24 mx-auto">
         <div className="flex flex-wrap md:text-left text-center order-first">
           <div className="lg:w-1/4 md:w-1/2 w-full px-4">
-            <h2 className="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">
+            <h2 className="title-font font-medium text-yellow-400 tracking-widest text-sm mb-3">
               CATEGORIES
             </h2>
             <nav className="list-none mb-10">
               <li>
-                <a className="text-gray-600 hover:text-gray-800">First Link</a>
+                <a className="hover:text-yellow-400">First Link</a>
               </li>
               <li>
-                <a className="text-gray-600 hover:text-gray-800">Second Link</a>
+                <a className="hover:text-yellow-400">Second Link</a>
               </li>
               <li>
-                <a className="text-gray-600 hover:text-gray-800">Third Link</a>
+                <a className="hover:text-yellow-400">Third Link</a>
               </li>
               <li>
-                <a className="text-gray-600 hover:text-gray-800">Fourth Link</a>
+                <a className="hover:text-yellow-400">Fourth Link</a>
               </li>
             </nav>
           </div>
           <div className="lg:w-1/4 md:w-1/2 w-full px-4">
-            <h2 className="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">
+            <h2 className="title-font font-medium text-yellow-400 tracking-widest text-sm mb-3">
               CATEGORIES
             </h2>
             <nav className="list-none mb-10">
               <li>
-                <a className="text-gray-600 hover:text-gray-800">First Link</a>
+                <a className="hover:text-yellow-400">First Link</a>
               </li>
               <li>
-                <a className="text-gray-600 hover:text-gray-800">Second Link</a>
+                <a className="hover:text-yellow-400">Second Link</a>
               </li>
               <li>
-                <a className="text-gray-600 hover:text-gray-800">Third Link</a>
+                <a className="hover:text-yellow-400">Third Link</a>
               </li>
               <li>
-                <a className="text-gray-600 hover:text-gray-800">Fourth Link</a>
+                <a className="hover:text-yellow-400">Fourth Link</a>
               </li>
             </nav>
           </div>
           <div className="lg:w-1/4 md:w-1/2 w-full px-4">
-            <h2 className="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">
+            <h2 className="title-font font-medium text-yellow-400 tracking-widest text-sm mb-3">
               CATEGORIES
             </h2>
             <nav className="list-none mb-10">
               <li>
-                <a className="text-gray-600 hover:text-gray-800">First Link</a>
+                <a className="hover:text-yellow-400">First Link</a>
               </li>
               <li>
-                <a className="text-gray-600 hover:text-gray-800">Second Link</a>
+                <a className="hover:text-yellow-400">Second Link</a>
               </li>
               <li>
-                <a className="text-gray-600 hover:text-gray-800">Third Link</a>
+                <a className="hover:text-yellow-400">Third Link</a>
               </li>
               <li>
-                <a className="text-gray-600 hover:text-gray-800">Fourth Link</a>
+                <a className="hover:text-yellow-400">Fourth Link</a>
               </li>
             </nav>
           </div>
           <div className="lg:w-1/4 md:w-1/2 w-full px-4">
-            <h2 className="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">
+            <h2 className="title-font font-medium text-yellow-400 tracking-widest text-sm mb-3">
               SUBSCRIBE
             </h2>
             <p className="text-gray-500 text-sm mt-2 md:text-left text-center">
@@ -82,8 +82,7 @@ const Footer = () => {
             <a
               href="https://twitter.com/knyttneve"
               rel="noopener noreferrer"
-              className="text-gray-600 ml-1"
-              target="_blank"
+              className="ml-1"yellow-400="_blank"
             >
               @knyttneve
             </a>
