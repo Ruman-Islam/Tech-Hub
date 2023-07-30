@@ -13,24 +13,13 @@ const LoginPage = () => {
         <div
           onClick={() =>
             signIn("google", {
-              callbackUrl: callbackUrl || "http://localhost:3000/",
+              callbackUrl: callbackUrl || "https://pc-builder-self.vercel.app",
             })
           }
           className="max-w-[250px] w-full flex items-center justify-center p-2 rounded bg-white border mb-2 gap-x-2 cursor-pointer"
         >
           <FcGoogle className="text-xl" />
-          SignIn with Github
-        </div>
-        <div
-          onClick={() =>
-            signIn("github", {
-              callbackUrl: callbackUrl || "http://localhost:3000/",
-            })
-          }
-          className="max-w-[250px] w-full flex items-center justify-center p-2 rounded bg-white border mb-2 gap-x-2 cursor-pointer"
-        >
-          <BsGithub className="text-xl" />
-          SignIn with Github
+          SignIn with Google
         </div>
       </div>
     </div>

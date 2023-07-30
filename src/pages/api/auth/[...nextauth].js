@@ -14,8 +14,9 @@ export const authOptions = {
         clientSecret: process.env.GOOGLE_CLIENT_SECRET,
       }),
     ],
+    secret: process.env.NEXTAUTH_SECRET,
     pages: {
-      signIn: "/login",
+      signIn: "https://pc-builder-self.vercel.app/login",
     },
   };
   
