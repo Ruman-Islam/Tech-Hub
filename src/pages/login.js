@@ -1,5 +1,4 @@
 import { FcGoogle } from "react-icons/fc";
-import { BsGithub } from "react-icons/bs";
 import { signIn } from "next-auth/react";
 import { useRouter } from "next/router";
 

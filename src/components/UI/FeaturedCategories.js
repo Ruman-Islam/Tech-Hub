@@ -27,7 +27,7 @@ const categoryImages = [
   {
     imgUrl: storage,
     title: "Storage Device",
-    url: "storage-device",
+    url: "storage",
   },
   {
     imgUrl: monitor,

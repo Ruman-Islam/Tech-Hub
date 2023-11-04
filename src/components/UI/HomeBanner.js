@@ -7,7 +7,7 @@ const HomeBanner = () => {
     <section className="text-gray-600 body-font mb-4">
       <div className="container mx-auto flex lg:flex-row flex-col-reverse gap-x-5 items-center ">
         <div className="lg:max-w-lg lg:w-1/4 w-full flex flex-col mb-auto bg-white">
-          <div className="bg-[#FFE8A1] p-5">
+          {/* <div className="bg-[#FFE8A1] p-5">
             <h2 className="text-center mb-2 font-semibold">Compare Products</h2>
             <div>
               <Input width="w-full" placeholder="Search and Select Product" />
@@ -17,7 +17,7 @@ const HomeBanner = () => {
                 View Comparison
               </button>
             </div>
-          </div>
+          </div> */}
           <div className="flex-1 shadow">
             <h1 className="text-center border-b mt-2 pb-1 font-semibold">
               Categories
