@@ -1,16 +1,38 @@
-## Live Link: https://pc-builder-self.vercel.app/
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-# Description
-Welcome to our online shop, your ultimate destination for all things electronic! Here, you'll find a vast collection of top-quality products ranging from computers and accessories to headphones and computer parts. Whether you're a tech enthusiast, a professional gamer, or simply looking to upgrade your electronics, we have everything you need.
+## Getting Started
 
-Computers are at the heart of modern life, and we understand the importance of having the best equipment. Explore our wide range of cutting-edge computers, from powerful desktops to sleek laptops, designed to meet your specific needs. Enhance your computing experience with our extensive selection of computer accessories, including high-speed external drives, ergonomic keyboards, and precision mice.
+First, run the development server:
 
-For the audiophiles and music lovers, we offer a diverse range of headphones that deliver exceptional sound quality and comfort. From wireless Bluetooth headphones for on-the-go convenience to noise-canceling headsets for immersive gaming sessions, our headphone collection has something for everyone.
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+```
 
-Tech enthusiasts and DIY PC builders will find a treasure trove of computer parts at our online shop. Upgrade and customize your system with ease using our premium-grade graphics cards, high-performance processors, ultra-fast SSDs, and feature-packed motherboards. We only stock products from reputable brands, ensuring reliability and performance.
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-At our online shop, we prioritize customer satisfaction and provide a seamless shopping experience. With user-friendly navigation and detailed product descriptions, you can make informed decisions with confidence. Our secure payment options and prompt delivery ensure that your order reaches your doorstep hassle-free.
+You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
 
-Our team of knowledgeable experts is always ready to assist you. If you have any questions or need guidance, feel free to reach out to our friendly customer support team. We are committed to delivering excellent service and building lasting relationships with our valued customers.
+[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
 
-Experience the joy of shopping for electronic products at our online store. Whether you're looking for the latest tech or essential accessories, we have it all under one roof. Join our community of tech enthusiasts and stay ahead in the digital world. Start exploring now!
+The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+
+This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+
+## Learn More
+
+To learn more about Next.js, take a look at the following resources:
+
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+
+## Deploy on Vercel
+
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
