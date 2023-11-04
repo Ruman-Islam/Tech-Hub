@@ -1,4 +1,6 @@
-export const categories = [
+import { ICategory } from "@/interfaces/common";
+
+export const categories: ICategory[] = [
   {
     category: "CPU / Processor",
     categorySlug: "processor",

@@ -1,8 +1,13 @@
-const links = ["First Link", "Second Link", "Third Link", "Fourth Link"];
+const links: string[] = [
+  "First Link",
+  "Second Link",
+  "Third Link",
+  "Fourth Link",
+];
 
 const Footer = () => {
   return (
-    <footer className="body-font bg-color_bg text-white">
+    <footer className="body-font bg-[#00071B] text-white">
       <div className="container px-5 py-24 mx-auto">
         <div className="flex flex-wrap md:text-left text-center order-first">
           <div className="lg:w-1/4 md:w-1/2 w-full px-4">

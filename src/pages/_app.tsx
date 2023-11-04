@@ -3,24 +3,27 @@ import { store } from "@/redux/store";
 import { SessionProvider } from "next-auth/react";
 import { Provider } from "react-redux";
 import { Toaster } from "react-hot-toast";
-import dynamic from "next/dynamic";
+import RootLayout from "@/components/Layout/RootLayout";
+import type { AppProps } from "next/app";
+import type { Page } from "../interfaces/page";
 
-export default function App({ Component, pageProps }) {
-  const DynamicNavbar = dynamic(() => import("@/components/UI/Navbar"), {
-    ssr: false,
-  });
+// this should give a better typing
+type Props = AppProps & {
+  Component: Page;
+};
 
-  const getLayout = Component.getLayout || ((page) => page);
-
-  return getLayout(
+// Define your App component
+const App = ({ Component, pageProps }: Props) => {
+  return (
     <Provider store={store}>
       <SessionProvider session={pageProps?.session}>
-        <>
+        <RootLayout>
           <Toaster />
-          <DynamicNavbar />
           <Component {...pageProps} />
-        </>
+        </RootLayout>
       </SessionProvider>
     </Provider>
   );
-}
+};
+
+export default App;

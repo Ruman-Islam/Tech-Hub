@@ -1,7 +1,8 @@
+import { IProduct } from "@/interfaces/common";
 import Image from "next/image";
 import Link from "next/link";
 
-const ProductCard = ({ product }) => {
+const ProductCard = ({ product }: { product: IProduct }) => {
   return (
     <div className="shadow-md hover:shadow-xl flex flex-col items-center max-w-[230px] lg:max-w-[250px] w-full bg-white rounded">
       <Link

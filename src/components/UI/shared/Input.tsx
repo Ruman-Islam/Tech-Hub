@@ -1,6 +1,10 @@
-import React from "react";
-
-const Input = ({ width, placeholder }) => {
+const Input = ({
+  width,
+  placeholder,
+}: {
+  width: string;
+  placeholder: string;
+}) => {
   return (
     <div className={width}>
       <div className="flex items-center w-full h-9 rounded focus-within:shadow-lg bg-white overflow-hidden">

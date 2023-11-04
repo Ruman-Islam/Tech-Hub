@@ -1,13 +1,22 @@
 import Image from "next/image";
+import Link from "next/link";
 import Input from "./shared/Input";
 import { categories } from "@/constants/navbar";
+import cpuImg from "../../assets/icons/4617522.png";
+import monitor from "../../assets/icons/monitor.png";
+import psu from "../../assets/icons/psu.png";
+import ram from "../../assets/icons/ram.png";
+import storage from "../../assets/icons/storage.png";
+import motherboard from "../../assets/icons/motherboard.png";
+
+const images = [cpuImg, monitor, psu, ram, storage, motherboard];
 
 const HomeBanner = () => {
   return (
     <section className="text-gray-600 body-font mb-4">
-      <div className="container mx-auto flex lg:flex-row flex-col-reverse gap-x-5 items-center ">
-        <div className="lg:max-w-lg lg:w-1/4 w-full flex flex-col mb-auto bg-white">
-          {/* <div className="bg-[#FFE8A1] p-5">
+      <div className="container mx-auto flex lg:flex-row flex-col-reverse gap-x-5">
+        <div className="flex flex-col bg-white basis-[20%] w-full">
+          <div className="bg-[#FFE8A1] p-5">
             <h2 className="text-center mb-2 font-semibold">Compare Products</h2>
             <div>
               <Input width="w-full" placeholder="Search and Select Product" />
@@ -17,28 +26,38 @@ const HomeBanner = () => {
                 View Comparison
               </button>
             </div>
-          </div> */}
+          </div>
           <div className="flex-1 shadow">
             <h1 className="text-center border-b mt-2 pb-1 font-semibold">
               Categories
             </h1>
             <div className="p-4 h-[368px]">
-              {categories.map(({ category }) => (
-                <a
+              {categories.map(({ category }, i) => (
+                <Link
+                  href="/"
                   key={category}
-                  className="group mb-2 relative hover:text-gray-900 block"
+                  className="group mb-2 relative hover:text-gray-900 flex gap-x-1 items-center"
                 >
-                  <button>{category}</button>
-                </a>
+                  <Image
+                    src={images[i]}
+                    width={200}
+                    height={200}
+                    className="w-4 h-4"
+                    alt=""
+                  />{" "}
+                  <span>{category}</span>
+                </Link>
               ))}
             </div>
           </div>
         </div>
-        <div className="flex-1 w-full flex flex-col md:items-start md:text-left items-center text-center mb-2">
+
+        <div className="basis-[80%] w-full border h-ful">
           <Image
             width={1000}
-            height={500}
-            layout="responsive"
+            height={800}
+            // layout="responsive"
+            className="h-full w-full object-cover"
             alt="hero"
             src="https://storage.pixteller.com/designs/designs-images/2020-12-21/05/laptop-new-arrival-sales-banner-1-5fe0c47813869.png"
           />

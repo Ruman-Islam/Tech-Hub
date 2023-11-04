@@ -1,13 +1,13 @@
-import RootLayout from "@/components/Layout/RootLayout";
+import dynamic from "next/dynamic";
 import FeaturedCategories from "@/components/UI/FeaturedCategories";
 import FeaturedProducts from "@/components/UI/FeaturedProducts";
-import dynamic from "next/dynamic";
+import { IProduct } from "@/interfaces/common";
 
-const HomeScreen = ({ allProducts }) => {
-  const DynamicBanner = dynamic(() => import("@/components/UI/HomeBanner"), {
-    ssr: false,
-  });
+const DynamicBanner = dynamic(() => import("@/components/UI/HomeBanner"), {
+  ssr: false,
+});
 
+const HomeScreen = ({ allProducts }: { allProducts: IProduct[] }) => {
   return (
     <>
       <DynamicBanner />
@@ -18,10 +18,6 @@ const HomeScreen = ({ allProducts }) => {
 };
 
 export default HomeScreen;
-
-HomeScreen.getLayout = function getLayout(page) {
-  return <RootLayout>{page}</RootLayout>;
-};
 
 export const getStaticProps = async () => {
   const res = await fetch(
