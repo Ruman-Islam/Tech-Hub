@@ -16,7 +16,7 @@ const HomeBanner = () => {
   return (
     <section className="text-gray-600 body-font mb-4">
       <div className="container mx-auto flex lg:flex-row flex-col-reverse gap-x-5">
-        <div className="flex flex-col bg-white basis-[20%] w-full">
+        <div className="flex flex-col bg-white lg:max-w-[300px] w-full">
           <div className="bg-[#FFE8A1] p-5">
             <h2 className="text-center mb-2 font-semibold">Compare Products</h2>
             <div>
