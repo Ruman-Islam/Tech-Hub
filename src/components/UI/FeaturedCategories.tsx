@@ -28,7 +28,7 @@ const FeaturedCategories = () => {
             <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-2 justify-items-center">
               {categoryImages.map((category, i) => (
                 <Link
-                  href={`/component/category/${category.url}`}
+                  href={`/category/${category.url}`}
                   key={category.title}
                 >
                   <div className="p-3 max-w-[250px] w-full shadow-lg bg-white cursor-pointer">

@@ -8,6 +8,7 @@ import psu from "../../assets/icons/psu.png";
 import ram from "../../assets/icons/ram.png";
 import storage from "../../assets/icons/storage.png";
 import motherboard from "../../assets/icons/motherboard.png";
+import Button from "./shared/Button";
 
 const images = [cpuImg, monitor, psu, ram, storage, motherboard];
 
@@ -22,9 +23,9 @@ const HomeBanner = () => {
               <Input width="w-full" placeholder="Search and Select Product" />
               <div className="h-2"></div>
               <Input width="w-full" placeholder="Search and Select Product" />
-              <button className="w-full mt-2 py-2 border-2 rounded border-blue-800 hover:bg-blue-800 duration-300 hover:text-white font-semibold">
+              <Button className="w-full mt-2 py-2 border-2 rounded border-blue-800 hover:bg-blue-800 duration-300 hover:text-white font-semibold">
                 View Comparison
-              </button>
+              </Button>
             </div>
           </div>
           <div className="flex-1 shadow">
@@ -32,9 +33,9 @@ const HomeBanner = () => {
               Categories
             </h1>
             <div className="p-4 h-[368px]">
-              {categories.map(({ category }, i) => (
+              {categories.map(({ category, categorySlug }, i) => (
                 <Link
-                  href="/"
+                  href={`/category/${categorySlug}`}
                   key={category}
                   className="group mb-2 relative hover:text-gray-900 flex gap-x-1 items-center"
                 >

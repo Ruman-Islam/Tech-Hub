@@ -66,7 +66,7 @@ const Navbar = () => {
                 >
                   {company.map((c) => (
                     <Link
-                      href={`/component/brand/${categorySlug}/${c}`}
+                      href={`/brand/${categorySlug}/${c}`}
                       key={c}
                       className="px-5 py-1 hover:bg-yellow-400 hover:text-color_bg duration-200 font-normal capitalize"
                     >

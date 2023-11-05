@@ -6,7 +6,7 @@ const ProductCard = ({ product }: { product: IProduct }) => {
   return (
     <div className="shadow-md hover:shadow-xl flex flex-col items-center max-w-[230px] lg:max-w-[250px] w-full bg-white rounded">
       <Link
-        href={`/component/productDetail/${product.id}`}
+        href={`/productDetail/${product.id}`}
         className="border-b w-full flex justify-center p-4 cursor-pointer"
       >
         <Image
@@ -21,7 +21,7 @@ const ProductCard = ({ product }: { product: IProduct }) => {
         <div>
           <div className="text-xs uppercase my-1">{product?.category}</div>
           <div className="leading-tight text-sm font-semibold hover:text-red-500 hover:underline duration-100">
-            <Link href={`/component/productDetail/${product.id}`}>
+            <Link href={`/productDetail/${product.id}`}>
               {product?.productName}
             </Link>
           </div>

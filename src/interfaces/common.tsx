@@ -4,6 +4,11 @@ export interface ICategory {
   company: string[];
 }
 
+export interface ICategory2 {
+  title: string;
+  url: string;
+}
+
 export interface IProduct {
   averageRating: number;
   individualRating: number;

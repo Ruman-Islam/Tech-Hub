@@ -13,7 +13,7 @@ export const categories: ICategory[] = [
   },
   {
     category: "Power Supply Unit",
-    categorySlug: "power-supply",
+    categorySlug: "power_supply",
     company: ["antec", "thermaltake", "corsair"],
   },
   {

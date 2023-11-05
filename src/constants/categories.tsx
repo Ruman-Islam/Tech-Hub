@@ -1,4 +1,6 @@
-export const categoryImages = [
+import { ICategory2 } from "@/interfaces/common";
+
+export const categoryImages: ICategory2[] = [
   {
     title: "CPU / Processor",
     url: "processor",
@@ -9,7 +11,7 @@ export const categoryImages = [
   },
   {
     title: "Power Supply Unit",
-    url: "power-supply",
+    url: "power_supply",
   },
   {
     title: "Storage Device",
