@@ -4,6 +4,7 @@ import FeaturedCategories from "@/components/UI/FeaturedCategories";
 import FeaturedProducts from "@/components/UI/FeaturedProducts";
 import { IProduct } from "@/interfaces/common";
 import Swal from "sweetalert2";
+import Cookies from "js-cookie";
 
 const DynamicBanner = dynamic(() => import("@/components/UI/HomeBanner"), {
   ssr: false,
@@ -11,12 +12,19 @@ const DynamicBanner = dynamic(() => import("@/components/UI/HomeBanner"), {
 
 const HomeScreen = ({ allProducts }: { allProducts: IProduct[] }) => {
   useEffect(() => {
-    Swal.fire({
-      title: "Attention!",
-      text: "This website is not fully functional. A successful implementation of TypeScript on NextJS with Redux and more.",
-      icon: "info",
-    });
+    const hasPopupShown = Cookies.get("popupShown");
+    if (!hasPopupShown) {
+      Swal.fire({
+        title: "Attention!",
+        text: "This website is not fully functional. A successful implementation of TypeScript on NextJS with Redux and more.",
+        icon: "info",
+      });
+
+      // Set a cookie to indicate that the popup has been shown
+      Cookies.set("popupShown", "true", { expires: 7 }); // Expires in 7 days
+    }
   }, []);
+
   return (
     <>
       <DynamicBanner />
