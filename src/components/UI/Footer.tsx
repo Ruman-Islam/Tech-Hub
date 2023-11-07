@@ -1,71 +1,54 @@
-const links: string[] = [
-  "First Link",
-  "Second Link",
-  "Third Link",
-  "Fourth Link",
-];
+import Link from "next/link";
+import {
+  TiSocialFacebookCircular,
+  TiSocialTwitterCircular,
+  TiSocialPinterestCircular,
+} from "react-icons/ti";
 
 const Footer = () => {
   return (
-    <footer className="body-font bg-[#00071B] text-white">
-      <div className="container px-5 py-24 mx-auto">
-        <div className="flex flex-wrap md:text-left text-center order-first">
-          <div className="lg:w-1/4 md:w-1/2 w-full px-4">
-            <h2 className="title-font font-medium text-yellow-400 tracking-widest text-sm mb-3">
-              CATEGORIES
-            </h2>
-            <nav className="list-none mb-10">
-              {links.map((item) => (
-                <li key={item}>
-                  <a className="hover:text-yellow-400">{item}</a>
-                </li>
-              ))}
-            </nav>
-          </div>
-          <div className="lg:w-1/4 md:w-1/2 w-full px-4">
-            <h2 className="title-font font-medium text-yellow-400 tracking-widest text-sm mb-3">
-              CATEGORIES
-            </h2>
-            <nav className="list-none mb-10">
-              {links.map((item) => (
-                <li key={item}>
-                  <a className="hover:text-yellow-400">{item}</a>
-                </li>
-              ))}
-            </nav>
-          </div>
-          <div className="lg:w-1/4 md:w-1/2 w-full px-4">
-            <h2 className="title-font font-medium text-yellow-400 tracking-widest text-sm mb-3">
-              CATEGORIES
-            </h2>
-            <nav className="list-none mb-10">
-              {links.map((item) => (
-                <li key={item}>
-                  <a className="hover:text-yellow-400">{item}</a>
-                </li>
-              ))}
-            </nav>
-          </div>
-          <div className="lg:w-1/4 md:w-1/2 w-full px-4">
-            <h2 className="title-font font-medium text-yellow-400 tracking-widest text-sm mb-3">
-              SUBSCRIBE
-            </h2>
-            <p className="text-gray-500 text-sm mt-2 md:text-left text-center">
-              Bitters fanny pack
-              <br className="lg:block hidden" />
-              waistcoat green juice
-            </p>
-          </div>
+    <footer className="body-font bg-[#00071B] mt-5">
+      <div className="h-[300px] flex flex-col justify-center items-center text-white">
+        <div>
+          <h1 className="text-3xl font-bold">TechHub.com</h1>
         </div>
-      </div>
-      <div className="bg-gray-100">
-        <div className="container px-5 py-6 mx-auto flex items-center sm:flex-row flex-col">
-          <a className="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
-            <span className="ml-3 text-xl">Tech Hub</span>
-          </a>
-          <p className="text-sm text-gray-500 sm:ml-6 sm:mt-0 mt-4">
-            © 2020 Tech Hub —
-          </p>
+        <div className="my-4 flex gap-2 text-gray-400">
+          <Link className="hover:underline" href="/">
+            HOME
+          </Link>
+          <Link className="hover:underline" href="/">
+            AGENT
+          </Link>
+          <Link className="hover:underline" href="/">
+            ABOUT
+          </Link>
+          <Link className="hover:underline" href="/">
+            LISTING
+          </Link>
+          <Link className="hover:underline" href="/">
+            BLOG
+          </Link>
+          <Link className="hover:underline" href="/">
+            CONTACT
+          </Link>
+        </div>
+
+        <div className="flex gap-1 text-blue-400">
+          <span className="cursor-pointer" title="Facebook">
+            <TiSocialFacebookCircular size={30} />
+          </span>
+          <span className="cursor-pointer" title="Twitter">
+            <TiSocialTwitterCircular size={30} />
+          </span>
+          <span className="cursor-pointer" title="Pinterest">
+            <TiSocialPinterestCircular size={30} />
+          </span>
+        </div>
+        <div>
+          <small>
+            Copyright @2024 All right reserved |{" "}
+            <span className="text-blue-400">TechHub.com</span>
+          </small>
         </div>
       </div>
     </footer>

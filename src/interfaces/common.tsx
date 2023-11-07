@@ -10,6 +10,7 @@ export interface ICategory2 {
 }
 
 export interface IProduct {
+  _id: string;
   averageRating: number;
   individualRating: number;
   brand: string;
@@ -21,9 +22,11 @@ export interface IProduct {
   price: number;
   productName: string;
   status: string;
-  reviews: {
-    date: string;
-    name: string;
-    text: string;
-  };
+  reviews: IReview[];
+}
+
+export interface IReview {
+  date: string;
+  name: string;
+  text: string;
 }

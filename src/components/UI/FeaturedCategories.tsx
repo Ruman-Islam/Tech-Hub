@@ -9,12 +9,12 @@ import motherboard from "../../assets/images/motherboard.jpg";
 import Link from "next/link";
 import { categoryImages } from "@/constants/categories";
 
-const images = [cpuImg, monitor, psu, ram, storage, motherboard];
+const images = [cpuImg, ram, psu, storage, monitor, motherboard];
 
 const FeaturedCategories = () => {
   return (
-    <div className="mt-16">
-      <div className="flex items-center my-8">
+    <div className="lg:mt-16">
+      <div className="flex items-center my-6">
         <div className="border-b w-full"></div>
         <div className="border py-3 px-5 uppercase font-semibold flex items-center gap-x-1 bg-white">
           <AiFillStar /> <span>categories</span>
@@ -25,13 +25,10 @@ const FeaturedCategories = () => {
       <div>
         <section className="text-gray-600 body-font">
           <div className="container px-5 mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-2 justify-items-center">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 justify-items-center">
               {categoryImages.map((category, i) => (
-                <Link
-                  href={`/category/${category.url}`}
-                  key={category.title}
-                >
-                  <div className="p-3 max-w-[250px] w-full shadow-lg bg-white cursor-pointer">
+                <Link href={`/category/${category.url}`} key={category.title}>
+                  <div className="p-3 max-w-[270px] w-full shadow-lg bg-white cursor-pointer border">
                     <div className="relative h-48 rounded overflow-hidden mx-auto flex justify-center">
                       <Image
                         width={500}

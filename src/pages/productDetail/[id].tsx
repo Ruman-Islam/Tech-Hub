@@ -1,6 +1,20 @@
-import { IProduct } from "@/interfaces/common";
+import { IProduct, IReview } from "@/interfaces/common";
 import Image from "next/image";
 import { GetServerSidePropsContext } from "next";
+import Button from "@/components/UI/shared/Button";
+import Link from "next/link";
+import { AiOutlineInfoCircle } from "react-icons/ai";
+
+interface ITag {
+  title: string;
+  value: string;
+}
+
+const tags: ITag[] = [
+  { title: "price", value: "price" },
+  { title: "status", value: "status" },
+  { title: "product code", value: "_id" },
+];
 
 const ProductDetail = ({ product }: { product: IProduct }) => {
   if (!product) {
@@ -8,51 +22,95 @@ const ProductDetail = ({ product }: { product: IProduct }) => {
   }
 
   return (
-    <section className="text-gray-600 body-font overflow-hidden mb-10">
-      <div className="container pb-5 px-5 mx-auto">
-        <div className="lg:w-4/5 mx-auto flex flex-wrap bg-white px-5">
-          <div className="flex justify-center text-center">
+    <section className="text-gray-600 body-font overflow-hidden mb-5">
+      <div className="container mx-auto">
+        <div className="w-full justify-center flex gap-4 px-5 flex-col lg:flex-row">
+          <div className="flex justify-center text-center border basis-[40%] shadow-md rounded-md p-20 h-[500px] bg-white">
             <Image
               style={{ width: "100%" }}
-              width={800}
-              height={600}
+              width={1000}
+              height={1000}
               alt={product?.productName}
-              className="lg:w-1/2 w-full lg:h-auto h-64 object-cover object-center rounded"
+              className="w-full h-full md:object-cover rounded-md"
               src={product?.img}
             />
           </div>
-          <div className="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
-            <h2 className="text-sm title-font text-gray-500 tracking-widest uppercase">
-              {product?.brand}
-            </h2>
-            <h1 className="text-gray-900 text-3xl title-font font-medium mb-1">
-              {product?.productName}
-            </h1>
-            <div className="flex mb-4">
-              <span className="flex items-center">
-                <span className="text-gray-600">
-                  Rating: {product?.averageRating}
+
+          <div className="basis-[60%] px-4 bg-white rounded-md shadow-md">
+            <div className="py-4">
+              <h1 className="text-2xl title-font font-medium mb-1 text-blue-800">
+                {product?.productName}
+              </h1>
+              <div className="flex gap-2 py-4">
+                {tags.map((item) => (
+                  <Button
+                    className="bg-[#F5F6FC] px-3 py-0.5 rounded-full border"
+                    key={item?.title}
+                  >
+                    <small>
+                      {item.title}:{" "}
+                      <span className="font-bold">
+                        {item.value === "price" ||
+                        item.value === "status" ||
+                        item.value === "_id"
+                          ? product[item.value as keyof IProduct].toString()
+                          : null}
+                      </span>
+                    </small>
+                  </Button>
+                ))}
+              </div>
+              <div className="flex mb-4">
+                <span className="flex items-center">
+                  <span className="text-gray-600">
+                    Rating: {product?.averageRating}
+                  </span>
                 </span>
-              </span>
+              </div>
+
+              <div>
+                <h1 className="font-bold">Key Features: </h1>
+                {product?.keyFeatures.map((ft) => (
+                  <p key={ft} className="py-1">
+                    {ft}
+                  </p>
+                ))}
+              </div>
+              <div className="flex pt-4 pb-1 border-b w-fit border-red-500">
+                <Link
+                  href={`/productDetail/${product.id}#detail`}
+                  className="text-red-500 flex gap-1 items-center"
+                >
+                  <span>More Info</span> <AiOutlineInfoCircle />
+                </Link>
+              </div>
             </div>
-            <div className="mb-5">
-              <h1 className="font-bold">Description:</h1>
-              <p>{product?.description}</p>
-            </div>
+          </div>
+        </div>
+
+        <div id="detail" className="px-5 mt-5 mx-4 rounded-md bg-white py-5">
+          <div className="w-full">
+            <h1 className="font-bold mb-1">Description:</h1>
+            <p className="text-sm">{product?.description}</p>
+          </div>
+          <br />
+          <div className="w-full">
+            <h1 className="font-bold mb-1">Review:</h1>
+
             <div>
-              <h1 className="font-bold">Specification:</h1>
-              {product?.keyFeatures.map((ft) => (
-                <p key={ft}>{ft}</p>
+              {product?.reviews.map((item: IReview, index: number) => (
+                <div className="border-t pt-2" key={index}>
+                  <p className="text-sm">{item.text}</p>
+                  <br />
+                  <p>
+                    By{" "}
+                    <span className="text-blue-800 font-semibold">
+                      {item.name}
+                    </span>{" "}
+                    {item.date}
+                  </p>
+                </div>
               ))}
-            </div>
-            <div className="flex mt-6 items-center pb-5 border-b-2 border-gray-100 mb-5"></div>
-            <div className="flex pb-4">
-              <span className="title-font font-medium text-2xl text-red-500">
-                {product?.price} BDT
-              </span>
-              <button className="flex ml-auto text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded">
-                BUY
-              </button>
             </div>
           </div>
         </div>

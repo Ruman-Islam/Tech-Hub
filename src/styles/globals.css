@@ -1,3 +1,23 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+html,
+body {
+  scroll-behavior: smooth;
+  background-color: #f2f4f8;
+}
+
+/* Custom range input slider styles */
+.range-slider-ab .range-slider__range {
+  background: #1565c0 !important;
+  height: 6px !important;
+}
+
+.range-slider-ab .range-slider__thumb {
+  width: 16px !important;
+  height: 16px !important;
+  border-radius: 100%;
+  background: white !important;
+  border: 2px solid #1565c0 !important;
+}

@@ -1,3 +1,4 @@
+import { useState } from "react";
 import ProductCard from "@/components/UI/shared/ProductCard";
 import { IProduct } from "@/interfaces/common";
 import { useRouter } from "next/router";
@@ -14,6 +15,28 @@ const BrandScreen = ({ products }: { products: IProduct[] }) => {
   const {
     query: { slug },
   } = useRouter();
+
+  const [items, setItems] = useState([
+    { id: 1, title: "ASUS", checked: false },
+    { id: 2, title: "ADATA", checked: false },
+    { id: 3, title: "MSI", checked: false },
+    { id: 4, title: "LG", checked: false },
+    { id: 5, title: "HP", checked: false },
+    { id: 6, title: "Gigabyte", checked: false },
+    { id: 7, title: "Kingston", checked: false },
+    { id: 8, title: "Toshiba", checked: false },
+    { id: 9, title: "Samsung", checked: false },
+  ]);
+
+  const handleCheckboxChange = (itemId: string) => {
+    setItems((prevItems) =>
+      prevItems.map((item) =>
+        item.id.toString() === itemId
+          ? { ...item, checked: !item.checked }
+          : item
+      )
+    );
+  };
 
   if (!products) {
     return <p>Loading......</p>;
@@ -47,12 +70,27 @@ const BrandScreen = ({ products }: { products: IProduct[] }) => {
               />
             </div>
           </div>
+
+          <div className="overflow-y-auto p-4">
+            {items.map((item) => (
+              <div key={item?.id}>
+                <label className="text-brand__font__size__sm text-brand__detail__text my-1.5 block text-gray-500">
+                  <input
+                    type="checkbox"
+                    checked={item?.checked}
+                    onChange={() => handleCheckboxChange(item?.id.toString())}
+                  />{" "}
+                  {item?.title}
+                </label>
+              </div>
+            ))}
+          </div>
         </div>
         <div className="flex-1 w-full">
           <div className="capitalize py-2 px-4 bg-white rounded-md font-semibold mb-3">
             {slug?.[0]}
           </div>
-          <div className="flex flex-wrap gap-1.5">
+          <div className="flex flex-wrap gap-5 juce">
             {products?.map((product) => (
               <ProductCard key={product.id} product={product} />
             ))}

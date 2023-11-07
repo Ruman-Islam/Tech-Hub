@@ -28,16 +28,16 @@ const HomeBanner = () => {
               </Button>
             </div>
           </div>
-          <div className="flex-1 shadow">
+          <div className="h-fit border">
             <h1 className="text-center border-b mt-2 pb-1 font-semibold">
               Categories
             </h1>
-            <div className="p-4 h-[368px]">
+            <div className="p-4 h-full flex lg:flex-col gap-4 lg:gap-0 flex-wrap">
               {categories.map(({ category, categorySlug }, i) => (
                 <Link
                   href={`/category/${categorySlug}`}
                   key={category}
-                  className="group mb-2 relative hover:text-gray-900 flex gap-x-1 items-center"
+                  className="group mb-2 relative hover:text-gray-950 hover:font-semibold flex gap-x-1 items-center w-fit duration-300"
                 >
                   <Image
                     src={images[i]}
@@ -53,14 +53,13 @@ const HomeBanner = () => {
           </div>
         </div>
 
-        <div className="basis-[80%] w-full border h-ful">
+        <div className="basis-[80%] w-full border h-[466px] shadow bg-white">
           <Image
             width={1000}
-            height={800}
-            // layout="responsive"
-            className="h-full w-full object-cover"
+            height={1000}
+            className="h-[466px] w-full"
             alt="hero"
-            src="https://storage.pixteller.com/designs/designs-images/2020-12-21/05/laptop-new-arrival-sales-banner-1-5fe0c47813869.png"
+            src="https://i.pinimg.com/originals/c3/32/1a/c3321a98ad07d570f0b3d568dcb00cf0.jpg"
           />
         </div>
       </div>

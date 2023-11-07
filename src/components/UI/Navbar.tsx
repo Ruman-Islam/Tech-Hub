@@ -8,18 +8,18 @@ const Navbar = () => {
   const { data: session } = useSession();
 
   return (
-    <header className="text-gray-600 body-font mb-4 container mx-auto">
+    <header className="text-gray-600 body-font mb-4 w-full mx-auto">
       <div className="bg-[#00071B]">
-        <div className="container mx-auto flex px-4 md:px-8 py-5 gap-x-1  md:flex-row justify-between items-center">
+        <div className="container mx-auto flex px-4 md:px-1 py-5 gap-x-1  md:flex-row justify-between items-center">
           <div className="flex flex-1 gap-x-4 items-center">
-            <a className="flex title-font font-medium items-center mb-4 md:mb-0 text-white">
-              <Link href="/" className="text-3xl">
+            <a className="flex title-font font-medium items-center text-white">
+              <Link href="/" className="text-xl lg:text-3xl">
                 Tech Hub
               </Link>
             </a>
 
             <div className="w-7/12 hidden md:block">
-              <Input width="w-7/12" placeholder="Search Something..." />
+              <Input width="w-full" placeholder="Search Something..." />
             </div>
           </div>
           {session?.user ? (
@@ -44,7 +44,7 @@ const Navbar = () => {
             href="/pc-builder"
             className="b mx-auto h-10 w-28 flex justify-center items-center"
           >
-            <div className="h-10 w-28 bg-gradient-to-br from-yellow-400 to-yellow-600 items-center rounded shadow-2xl cursor-pointer absolute overflow-hidden transform hover:scale-x-110 hover:scale-y-105 transition duration-300 ease-out flex flex-col justify-center">
+            <div className="h-10 w-28 bg-gradient-to-br from-blue-600 to-blue-800 items-center rounded shadow-2xl cursor-pointer absolute overflow-hidden transform hover:scale-x-110 hover:scale-y-105 transition duration-300 ease-out flex flex-col justify-center">
               {" "}
               <span className="text-center text-white font-semibold z-10">
                 PC Builder
@@ -55,7 +55,7 @@ const Navbar = () => {
       </div>
 
       <div className="shadow-md bg-white py-1">
-        <nav className="container mx-auto px-4 md:px-8 py-2 md:border-gray-400 flex flex-wrap items-center text-sm justify-start font-semibold">
+        <nav className="container mx-auto px-4 md:px-1 py-2 md:border-gray-400 flex flex-wrap items-center text-sm justify-start font-semibold">
           {categories.map(({ category, categorySlug, company }) => (
             <a
               key={category}
@@ -65,13 +65,13 @@ const Navbar = () => {
               <div
                 className="hidden left-0 absolute group-hover:flex hover:flex
            w-[200px]
-           flex-col bg-white drop-shadow-lg border-t-2 border-yellow-400 pt-1 z-10"
+           flex-col bg-white drop-shadow-lg border-t-2 border-blue-800 pt-1 z-10"
               >
                 {company.map((c) => (
                   <Link
                     href={`/brand/${categorySlug}/${c}`}
                     key={c}
-                    className="px-5 py-1 hover:bg-yellow-400 hover:text-color_bg duration-200 font-normal capitalize"
+                    className="px-5 py-1 hover:bg-blue-800 hover:text-white duration-200 font-normal capitalize"
                   >
                     {c}
                   </Link>
